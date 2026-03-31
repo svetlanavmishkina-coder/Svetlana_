@@ -1,0 +1,629 @@
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Резюме — Старший финансовый контролер</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-soft: #11172b;
+      --card: rgba(255, 255, 255, 0.08);
+      --card-border: rgba(255, 255, 255, 0.14);
+      --text: #e8edf7;
+      --muted: #b7c1d6;
+      --accent: #65d6ff;
+      --accent-2: #8b5cf6;
+      --accent-3: #22c55e;
+      --shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
+      --radius: 22px;
+      --max-width: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(101, 214, 255, 0.15), transparent 30%),
+        radial-gradient(circle at top right, rgba(139, 92, 246, 0.16), transparent 28%),
+        linear-gradient(135deg, #0b1020 0%, #0f172a 45%, #111827 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--max-width));
+      margin: 0 auto;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 72px 0 44px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(120deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)),
+        linear-gradient(135deg, rgba(101, 214, 255, 0.18), rgba(139, 92, 246, 0.15));
+      backdrop-filter: blur(10px);
+      z-index: 0;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      padding: 38px;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 30px;
+      background: rgba(255,255,255,0.05);
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 16px rgba(101, 214, 255, 0.7);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(34px, 5vw, 64px);
+      line-height: 1.04;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      background: linear-gradient(90deg, #ffffff 0%, #9be7ff 35%, #b499ff 70%, #ffffff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 8px 35px rgba(101, 214, 255, 0.18);
+    }
+
+    .subtitle {
+      font-size: clamp(18px, 2vw, 24px);
+      color: #d5def2;
+      margin: 0;
+      max-width: 900px;
+    }
+
+    .hero-grid {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr;
+      gap: 22px;
+    }
+
+    .glass-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+
+    .summary-card,
+    .contact-card {
+      padding: 24px;
+    }
+
+    .summary-card p,
+    .contact-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .contact-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 15px;
+    }
+
+    .contact-item:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .contact-item span:first-child {
+      color: #dbe7ff;
+      font-weight: 600;
+    }
+
+    section {
+      padding: 26px 0;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 0 0 20px;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .section-title::before {
+      content: "";
+      width: 14px;
+      height: 14px;
+      border-radius: 4px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 20px rgba(101, 214, 255, 0.45);
+      flex: 0 0 auto;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .skill-card {
+      position: relative;
+      overflow: hidden;
+      padding: 22px 20px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.05));
+      border: 1px solid rgba(255,255,255,0.12);
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+      min-height: 132px;
+    }
+
+    .skill-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -20% -50% auto;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(101,214,255,0.22), transparent 70%);
+      transition: transform 0.35s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      border-color: rgba(101, 214, 255, 0.45);
+      box-shadow: 0 18px 42px rgba(0,0,0,0.28);
+    }
+
+    .skill-card:hover::after {
+      transform: scale(1.2);
+    }
+
+    .skill-index {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, rgba(101,214,255,0.18), rgba(139,92,246,0.22));
+      color: #dff7ff;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .skill-card h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      line-height: 1.3;
+    }
+
+    .skill-card p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 18px;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 18px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--accent), rgba(255,255,255,0.08), var(--accent-2));
+      opacity: 0.7;
+    }
+
+    .job-card {
+      position: relative;
+      margin-left: 42px;
+      padding: 24px 24px 22px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: var(--shadow);
+    }
+
+    .job-card::before {
+      content: "";
+      position: absolute;
+      left: -32px;
+      top: 28px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 0 6px rgba(101,214,255,0.12);
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: flex-start;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .job-title-wrap h3 {
+      margin: 0 0 6px;
+      font-size: 24px;
+      line-height: 1.2;
+    }
+
+    .company {
+      color: #d9e4fb;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .period {
+      white-space: nowrap;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #dbeafe;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .job-card ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .job-card li {
+      margin-bottom: 10px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .info-card {
+      padding: 24px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: var(--shadow);
+    }
+
+    .info-card h3 {
+      margin: 0 0 16px;
+      font-size: 22px;
+    }
+
+    .info-card p,
+    .info-card li {
+      color: var(--muted);
+    }
+
+    .info-list {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .footer-note {
+      padding: 12px 0 40px;
+      color: rgba(232, 237, 247, 0.6);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    @media (max-width: 1024px) {
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-grid,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .hero {
+        padding-top: 28px;
+      }
+
+      .hero-inner {
+        padding: 24px;
+        border-radius: 24px;
+      }
+
+      .section-title {
+        font-size: 24px;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .job-card {
+        margin-left: 30px;
+        padding: 20px;
+      }
+
+      .timeline::before {
+        left: 12px;
+      }
+
+      .job-card::before {
+        left: -24px;
+        width: 14px;
+        height: 14px;
+      }
+
+      .job-title-wrap h3 {
+        font-size: 20px;
+      }
+
+      .subtitle {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="eyebrow">Финансы • Моделирование • Бюджетирование</div>
+        <h1>[Ваше имя]</h1>
+        <p class="subtitle">
+          Старший финансовый контролер / Руководитель направления финансового моделирования,
+          управленческого учета и бюджетирования
+        </p>
+
+        <div class="hero-grid">
+          <div class="glass-card summary-card">
+            <p>
+              Финансовый лидер с сильной экспертизой в стратегическом моделировании, управленческом учете,
+              бюджетировании, CAPEX-анализе и автоматизации финансовых процессов в крупных производственных компаниях.
+            </p>
+          </div>
+
+          <div class="glass-card contact-card">
+            <div class="contact-item">
+              <span>ФИО</span>
+              <span>[Ваше имя]</span>
+            </div>
+            <div class="contact-item">
+              <span>Позиция</span>
+              <span>Senior Financial Controller</span>
+            </div>
+            <div class="contact-item">
+              <span>Фокус</span>
+              <span>Modeling / FP&A / Budgeting</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2 class="section-title">Ключевые компетенции</h2>
+      <div class="skills-grid">
+        <article class="skill-card">
+          <div class="skill-index">01</div>
+          <h3>Стратегическое финансовое моделирование</h3>
+          <p>Построение комплексных моделей по бизнес-сегментам и цепочке создания стоимости.</p>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-index">02</div>
+          <h3>Бюджетирование и прогнозирование</h3>
+          <p>Планирование, сценарный анализ и управление финансовыми прогнозами.</p>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-index">03</div>
+          <h3>Управленческий учет и себестоимость</h3>
+          <p>Стандартизация методологии учета и контроль качества управленческой отчетности.</p>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-index">04</div>
+          <h3>P&amp;L, Working Capital, Cash Flow</h3>
+          <p>Разработка и сопровождение финансовых блоков для стратегического управления бизнесом.</p>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-index">05</div>
+          <h3>Инвестиционный анализ и CAPEX</h3>
+          <p>Оценка окупаемости проектов и подготовка материалов для инвестиционных решений.</p>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-index">06</div>
+          <h3>Автоматизация финансовых процессов</h3>
+          <p>Внедрение корпоративных систем и повышение скорости подготовки отчетности.</p>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-index">07</div>
+          <h3>Материалы для акционеров и топ-менеджмента</h3>
+          <p>Подготовка презентаций, моделей и обоснований для внешних и внутренних коммуникаций.</p>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-index">08</div>
+          <h3>M&amp;A-интеграция</h3>
+          <p>Финансовое сопровождение интеграции активов и унификация процессов планирования.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Опыт работы</h2>
+      <div class="timeline">
+        <article class="job-card">
+          <div class="job-header">
+            <div class="job-title-wrap">
+              <h3>Старший финансовый контролер, направление стратегического моделирования</h3>
+              <div class="company">ПАО «Группа Черкизово»</div>
+            </div>
+            <div class="period">Сентябрь 2021 — настоящее время</div>
+          </div>
+          <ul>
+            <li>Разработка стратегической финансовой модели сегмента «Птицеводство» по полной цепочке создания стоимости: от производства до продаж.</li>
+            <li>Сегмент «Птицеводство» занимает лидирующие позиции в РФ по производству мяса курицы и включает 15 производственных комплексов.</li>
+            <li>Подготовка и актуализация консолидированной стратегической модели Группы по основным направлениям бизнеса.</li>
+            <li>Построение моделей по блокам P&amp;L, Working Capital, Cash Flow для целей стратегического планирования и внешних коммуникаций.</li>
+            <li>Подготовка и защита финансовых моделей перед акционерами.</li>
+            <li>Разработка моделей для Эксперт РА, АКРА, банков и региональных администраций.</li>
+            <li>Оценка эффективности и окупаемости CAPEX-проектов с подготовкой материалов для принятия инвестиционных решений.</li>
+            <li>Подготовка презентационных материалов для акционеров по стратегическим и инвестиционным инициативам.</li>
+            <li>Участие в M&amp;A-интеграции в части финансового моделирования и планирования.</li>
+          </ul>
+        </article>
+
+        <article class="job-card">
+          <div class="job-header">
+            <div class="job-title-wrap">
+              <h3>Ведущий менеджер проектов</h3>
+              <div class="company">ПАО «Группа Черкизово»</div>
+            </div>
+            <div class="period">Февраль 2021 — сентябрь 2021</div>
+          </div>
+          <ul>
+            <li>Автоматизация процессов бюджетирования и прогнозирования по сегментам Группы Черкизово в системе Hyperion: растениеводство, кормопроизводство, выращивание и мясопереработка.</li>
+            <li>Автоматизация сбора P&amp;L и фактической себестоимости готовой продукции, что повысило оперативность и сопоставимость отчетности.</li>
+            <li>Координация проектов автоматизации бухгалтерского и управленческого учета со стороны бизнеса: сбор требований, сопровождение реализации, контроль исполнения.</li>
+            <li>Адаптация методик бухгалтерского и управленческого учета под требования бизнеса.</li>
+            <li>Внедрение дополнительных аналитик: статьи затрат, номенклатурные группы, подразделения, функции.</li>
+            <li>Поддержка внедрения единых корпоративных стандартов сбора и отражения расходов на уровне Группы.</li>
+          </ul>
+        </article>
+
+        <article class="job-card">
+          <div class="job-header">
+            <div class="job-title-wrap">
+              <h3>Ведущий экономист по внедрению ERP-систем</h3>
+              <div class="company">УК «Птицеводство» Группы Черкизово</div>
+            </div>
+            <div class="period">Апрель 2014 — февраль 2021</div>
+          </div>
+          <ul>
+            <li>Развитие системы управленческого учета и единых подходов к учету затрат на предприятиях сегмента птицеводства.</li>
+            <li>Стандартизация структуры учета, справочников, бюджетов и подходов к расчету себестоимости, что обеспечило единообразие управленческой отчетности.</li>
+            <li>Интеграция предприятий в единую учетную систему 1С с общей методологией формирования себестоимости.</li>
+            <li>Поддержка корректности отражения затрат в 1С со стороны управленческого учета.</li>
+            <li>Внедрение системы бюджетирования на базе Oracle Hyperion и сближение подходов к расчету бюджетной и фактической себестоимости.</li>
+            <li>Автоматизация выгрузки фактической себестоимости, производственных показателей и финансового результата в Oracle Hyperion.</li>
+            <li>Разработка Excel-моделей и управленческой отчетности для анализа данных и подготовки материалов для топ-менеджмента.</li>
+            <li>Координация процесса годового бюджетирования, оценка эффективности проектов и участие в M&amp;A-интеграции новых активов.</li>
+          </ul>
+        </article>
+
+        <article class="job-card">
+          <div class="job-header">
+            <div class="job-title-wrap">
+              <h3>Главный экономист / руководитель отдела</h3>
+              <div class="company">
+                Предприятия Группы Черкизово: ОАО «Моссельпром», Петелинская птицефабрика,
+                «Куриное Царство Брянск», «Куриное Царство Липецк»
+              </div>
+            </div>
+            <div class="period">Сентябрь 2008 — апрель 2014</div>
+          </div>
+          <ul>
+            <li>Организация управленческого учета на предприятиях.</li>
+            <li>Расчет себестоимости, P&amp;L и проведение план-факт анализа.</li>
+            <li>Подготовка ежемесячного прогноза себестоимости и годового бюджета.</li>
+            <li>Осуществление бюджетного контроля.</li>
+            <li>Подготовка аналитических материалов и презентаций для руководства.</li>
+            <li>Поддержка бизнеса по вопросам учета, отчетности и финансовой аналитики.</li>
+            <li>Взаимодействие с местными органами власти в рамках зоны ответственности.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="two-col">
+      <article class="info-card">
+        <h3>Образование</h3>
+        <p><strong>Ивановский государственный химико-технологический университет, Иваново</strong></p>
+        <p>Институт управления, финансовых и информационных систем</p>
+        <p>Специальность: экономист-менеджер</p>
+        <p>Очная форма обучения</p>
+        <p>Год окончания: 2001</p>
+      </article>
+
+      <article class="info-card">
+        <h3>Профессиональные навыки</h3>
+        <ul class="info-list">
+          <li>Финансовое и стратегическое моделирование</li>
+          <li>Бюджетирование и прогнозирование</li>
+          <li>Управленческий учет и анализ себестоимости</li>
+          <li>Инвестиционный анализ и оценка CAPEX-проектов</li>
+          <li>Подготовка материалов для акционеров, банков и рейтинговых агентств</li>
+          <li>Интеграция M&amp;A-проектов</li>
+          <li>Автоматизация финансовых процессов</li>
+          <li>Excel</li>
+          <li>Oracle Hyperion</li>
+          <li>1С</li>
+        </ul>
+      </article>
+    </section>
+
+    <div class="footer-note">
+      HTML-шаблон резюме для современного профессионального представления опыта и компетенций
+    </div>
+  </main>
+</body>
+</html>
